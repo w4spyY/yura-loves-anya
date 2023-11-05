@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юра и Аня</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background textalign" id="a">
+    <h1 class="textalign configh1">Юра и Аня</h1>
+    <p id="timeSince">Время прошло с 28 марта 2021 года: <span id="timeCount"></span></p>
+    <img id="image" src="heart.png" class="center">
+    <script>
+        const targetDate = new Date('2021-03-28T00:00:00Z');
+        const currentDate = new Date();
+        const timeDiff = currentDate - targetDate;
+        const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hoursPassed = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutesPassed = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const timeCountElement = document.getElementById('timeCount');
+        timeCountElement.textContent = `${daysPassed} дней, ${hoursPassed} часов, ${minutesPassed} минут`;
+    </script>
+</body>
+</html>
